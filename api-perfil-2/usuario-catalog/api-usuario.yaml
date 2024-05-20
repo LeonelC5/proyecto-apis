@@ -1,0 +1,133 @@
+openapi: 3.0.0
+info:
+  title: API de Estudiantes
+  description: API para gestionar registros de estudiantes.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8001
+    description: Servidor de desarrollo
+
+paths:
+  /users:
+    get:
+      summary: Obtener todos los usuarios
+      responses:
+        "200":
+          description: Un arreglo JSON de usuarios
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    nombre:
+                      type: string
+                    apellido:
+                      type: string
+                    correo:
+                      type: string
+                    celular:
+                      type: string
+                    description:
+                      type: string
+                    imagen:
+                      type: string
+    post:
+      summary: Crear un nuevo usuario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                apellido:
+                  type: string
+                correo:
+                  type: string
+                password:
+                  type: string
+                celular:
+                  type: string
+                description:
+                  type: string
+                imagen:
+                  type: string
+      responses:
+        "200":
+          description: Usuario creado exitosamente
+
+  /user/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+    get:
+      summary: Obtener un usuario por ID
+      responses:
+        "200":
+          description: Un objeto de usuario
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  nombre:
+                    type: string
+                  apellido:
+                    type: string
+                  correo:
+                    type: string
+                  celular:
+                    type: string
+                  description:
+                    type: string
+                  imagen:
+                    type: string
+        "404":
+          description: Usuario no encontrado
+    put:
+      summary: Actualizar un usuario por ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                apellido:
+                  type: string
+                correo:
+                  type: string
+                password:
+                  type: string
+                celular:
+                  type: string
+                description:
+                  type: string
+                imagen:
+                  type: string
+      responses:
+        "200":
+          description: Usuario actualizado exitosamente
+        "404":
+          description: Usuario no encontrado
+    delete:
+      summary: Eliminar un usuario por ID
+      responses:
+        "200":
+          description: Usuario eliminado exitosamente
+        "404":
+          description: Usuario no encontrado
