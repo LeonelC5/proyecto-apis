@@ -1,0 +1,18 @@
+ version: "3.3"
+
+ services:
+   api-users:
+     build: ./leonelcd
+     image: leonelcd/api-prueba-3
+     ports:
+       - 8001:8001
+   api-images:
+     build: ./leonelcd
+     image: leonelcd/api-imagenes-2
+     ports:
+       - 8002:8002
+   api-interaction:
+     build: ./leonelcd
+     image: leonelcd/api-likes
+     ports:
+       - 8003:8003
