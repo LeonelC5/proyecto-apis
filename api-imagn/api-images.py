@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 app.secret_key = "my_secret_key"
 
-CORS(app, resources={r"/": {"origins": ""}}, supports_credentials=True)
+CORS(app)
 
 db = mysql.connector.connect(
     host="database-proyecto.c45ddxrq8nnm.us-east-1.rds.amazonaws.com",
