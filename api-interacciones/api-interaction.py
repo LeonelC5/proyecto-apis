@@ -10,7 +10,7 @@ db = mysql.connector.connect(
     host="database-proyecto.c45ddxrq8nnm.us-east-1.rds.amazonaws.com",
     user="admin",
     password="database-proyecto",
-    database="imagenes"
+    database="favoritas"
 )
 cursor = db.cursor(dictionary=True)
 
