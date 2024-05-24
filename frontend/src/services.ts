@@ -1,9 +1,9 @@
 import axios from "axios";
 
 export const userService = axios.create({
-  baseURL: "http://34.229.92.10:8001",
+  baseURL: "http://lb-prod-382715286.us-east-1.elb.amazonaws.com:8001",
 });
 
 export const imagesService = axios.create({
-  baseURL: "http://34.229.92.10:8002",
+  baseURL: "http://lb-prod-382715286.us-east-1.elb.amazonaws.com:8002",
 });
