@@ -16,3 +16,8 @@
      image: leonelcd/api-interacciones
      ports:
        - 8003:8003
+   frontendd:
+     build: ./frontend
+     image: leonelcd/frontend
+     ports:
+       - 8004:8004
